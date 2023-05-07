@@ -1,0 +1,51 @@
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div style="background-color:#049cf4" class="modal-header">
+          <h2>UPDATE DATA</h2>
+        </div>
+
+        <div class="row">
+          
+        <form #form="ngForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Enter name</label>
+            <input type="text" class="form-control"  id="name" [(ngModel)]="toUpdate.name" name="name" placeholder="Enter name">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control"  id="exampleInputEmail1" [(ngModel)]="toUpdate.email" name="email"
+              placeholder="Email address" aria-describedby="emailHelp">
+          </div>
+
+          <div class="mb-3">
+            <label for="city" class="form-label">Enter city</label>
+            <input type="text" class="form-control"  id="city" [(ngModel)]="toUpdate.city" name="city" placeholder="Enter city">
+          </div>
+          <div class="mb-3">
+            <label for="pincode" class="form-label">Enter pincode</label>
+            <input type="number" class="form-control"  id="pincode" [(ngModel)]="toUpdate.pincode"  name="pincode"
+              placeholder="Enter pincode">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Enter phone number</label>
+            <input type="number" class="form-control" id="phone" [(ngModel)]="toUpdate.phonenumber" name="phonenumber"
+              placeholder="Enter phone number">
+          </div>
+        </form>
+
+        </div>
+        <div style="background-color:#049cf4" class="modal-footer">
+          <button routerLink="/" routerLinkActive="router-link-active" type="button" class="btn btn-primary"
+           >BACK</button>
+          <button type="button" (click)="update(form)" class="btn btn-success" [disabled]="form.invalid">UPDATE</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,82 @@
+<nav class="navbar bg-dark">
+  <div class="container">
+    <h2 class="text-white">
+      ANGULAR CRUD OPERATION
+    </h2>
+  </div>
+  <!-- Button trigger modal -->
+  <div class="d-flex marginRight">
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+  </div>
+</nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div style="background-color:#049cf4" class="modal-header">
+        <h5 style="color: #fff;" class="modal-title" id="exampleModalLabel">ADD EMPLOYEE</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="employee" #form="ngForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Enter name</label>
+            <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter name">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"  placeholder="Email address" aria-describedby="emailHelp">
+          </div>
+
+          <div class="mb-3">
+            <label for="city" class="form-label">Enter city</label>
+            <input type="text" class="form-control" formControlName="city" id="city" placeholder="Enter city">
+          </div>
+          <div class="mb-3">
+            <label for="pincode" class="form-label">Enter pincode</label>
+            <input type="number" class="form-control" formControlName="pincode" id="pincode" placeholder="Enter pincode">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Enter phone number</label>
+            <input type="number" class="form-control" formControlName="phonenumber" id="phone" placeholder="Enter phone number">
+          </div>
+        </form>
+      </div>
+      <div style="background-color:#049cf4" class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addEmployee(form)" [disabled]="form.invalid">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- table -->
+<div class="container-fluid mt-3">
+  <table class="table table-hover">
+<thead>
+  <tr>
+    <th>NAME</th>
+    <th>EMAIL</th>
+    <th>CITY</th>
+    <th>PINCODE</th>
+    <th>PHONE NUMBER</th>
+    <th>ACTION</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let data of heroes" >
+<td>{{data.name}}</td>
+<td>{{data.email}}</td>
+<td>{{data.city}}</td>
+<td>{{data.pincode}}</td>
+<td>{{data.phonenumber}}</td>
+<td>
+  <button routerLink="/update/{{data.id}}" class="btn btn-success">Edit</button><button (click)="delete(data.id)" class="btn btn-danger delete">Delete</button>
+</td>
+  </tr>
+</tbody>
+  </table>
+</div>

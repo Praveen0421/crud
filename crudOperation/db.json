@@ -1,0 +1,44 @@
+{
+  "employeeData": [
+    {
+      "id": 1,
+      "name": "Praveen",
+      "email": "raipraveen@gmail.com",
+      "city": "Valsad",
+      "pincode": 396020,
+      "phonenumber": "9898255000"
+    },
+    {
+      "name": "Tatsat",
+      "email": "tatsat@gmail.com",
+      "city": "valsad",
+      "pincode": 396020,
+      "phonenumber": 938378575,
+      "id": 2
+    },
+    {
+      "name": "Raj",
+      "email": "raj@gmail.com",
+      "city": "valsad",
+      "pincode": 3960292,
+      "phonenumber": 837495959,
+      "id": 3
+    },
+    {
+      "name": "Prince",
+      "email": "prince@gmail.com",
+      "city": "valsad",
+      "pincode": 839494,
+      "phonenumber": 9384988585,
+      "id": 4
+    },
+    {
+      "name": "Jaydeep",
+      "email": "jaydeep",
+      "city": "surat",
+      "pincode": 74885,
+      "phonenumber": 84859596969,
+      "id": 5
+    }
+  ]
+}
