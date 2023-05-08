@@ -5,3 +5,18 @@ margin-right: 10px;
 .delete{
   margin-left: 10px;
 }
+td{
+  width: 150px;
+}
+.nav{
+  padding: 15px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-box{
+  padding: 5px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+}

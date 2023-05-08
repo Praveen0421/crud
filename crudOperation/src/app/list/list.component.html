@@ -1,11 +1,16 @@
-<nav class="navbar bg-dark">
-  <div class="container">
+<nav class="nav bg-dark">
+  <div class="">
     <h2 class="text-white">
       ANGULAR CRUD OPERATION
     </h2>
   </div>
+
   <!-- Button trigger modal -->
-  <div class="d-flex marginRight">
+  <div class="d-flex align-items-center marginRight gap-4">
+
+    <div>
+      <input class="search-box" type="text" [(ngModel)]="searchEmployee" placeholder="Search employee">
+    </div>
     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
   </div>
 </nav>
@@ -28,7 +33,8 @@
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"  placeholder="Email address" aria-describedby="emailHelp">
+            <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"
+              placeholder="Email address" aria-describedby="emailHelp">
           </div>
 
           <div class="mb-3">
@@ -37,17 +43,20 @@
           </div>
           <div class="mb-3">
             <label for="pincode" class="form-label">Enter pincode</label>
-            <input type="number" class="form-control" formControlName="pincode" id="pincode" placeholder="Enter pincode">
+            <input type="number" class="form-control" formControlName="pincode" id="pincode"
+              placeholder="Enter pincode">
           </div>
           <div class="mb-3">
             <label for="phone" class="form-label">Enter phone number</label>
-            <input type="number" class="form-control" formControlName="phonenumber" id="phone" placeholder="Enter phone number">
+            <input type="number" class="form-control" formControlName="phonenumber" id="phone"
+              placeholder="Enter phone number">
           </div>
         </form>
       </div>
       <div style="background-color:#049cf4" class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="addEmployee(form)" [disabled]="form.invalid">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="addEmployee(form)" [disabled]="form.invalid">Save
+          changes</button>
       </div>
     </div>
   </div>
@@ -56,27 +65,28 @@
 <!-- table -->
 <div class="container-fluid mt-3">
   <table class="table table-hover">
-<thead>
-  <tr>
-    <th>NAME</th>
-    <th>EMAIL</th>
-    <th>CITY</th>
-    <th>PINCODE</th>
-    <th>PHONE NUMBER</th>
-    <th>ACTION</th>
-  </tr>
-</thead>
-<tbody>
-  <tr *ngFor="let data of heroes" >
-<td>{{data.name}}</td>
-<td>{{data.email}}</td>
-<td>{{data.city}}</td>
-<td>{{data.pincode}}</td>
-<td>{{data.phonenumber}}</td>
-<td>
-  <button routerLink="/update/{{data.id}}" class="btn btn-success">Edit</button><button (click)="delete(data.id)" class="btn btn-danger delete">Delete</button>
-</td>
-  </tr>
-</tbody>
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>CITY</th>
+        <th>PINCODE</th>
+        <th>PHONE NUMBER</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of heroes | filter:searchEmployee">
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.city}}</td>
+        <td>{{data.pincode}}</td>
+        <td>{{data.phonenumber}}</td>
+        <td>
+          <button routerLink="/update/{{data.id}}" class="btn btn-success">Edit</button><button
+            (click)="delete(data.id)" class="btn btn-danger delete">Delete</button>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>

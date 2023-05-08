@@ -18,6 +18,7 @@ export class ListComponent implements OnInit {
     pincode: number;
     phonenumber: number;
   }[] = [];
+  searchEmployee:string=''
   constructor(private formbuilder: FormBuilder, private api: ApiService) {}
 
   ngOnInit() {
